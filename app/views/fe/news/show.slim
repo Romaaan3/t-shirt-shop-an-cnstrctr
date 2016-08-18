@@ -1,0 +1,41 @@
+body
+  header#main-screen.header.header-menu-item
+    .container
+      .row
+        .col-xs-12.col-sm-12.col-md-12.col-lg-12
+          h1.text-center.text-muted Новости
+    /! container
+  /! header
+  section#news
+    .container
+      .news.new-inner
+        .row
+          .col-xs-12.col-sm-12.col-md-12.col-lg-12
+            h2.text-center.text-muted = @news.title
+        .row
+          .col-xs-12.col-sm-12.col-md-12.col-lg-12
+            .ident-buttom
+
+              p.description = @news.description.html_safe
+
+        .row
+          .col-xs-12.col-sm-12.col-md-12.col-lg-12
+            .sochial-bottom.text-center
+              .ya-share2 data-counter="" data-services="vkontakte,facebook,gplus,twitter"
+              span Рассказать друзьям
+    .min-news-bg
+      .container
+        .row
+          .col-xs-12.col-sm-12.col-md-12.col-lg-12
+            h2.text-center.text-muted Свежие новости
+        .row
+          - @last2.each do |one|
+            .col-xs-12.col-sm-12.col-md-6.col-lg-6
+              article
+                .block-news
+                  h3 = one.title
+                  p = one.anons
+                  span.news-date = time_ago_in_words(one.updated_at)
+
+                  = link_to "Узнать больше", fe_news_path(one), class: "btn"
+

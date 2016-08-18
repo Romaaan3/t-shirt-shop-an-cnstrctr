@@ -1,0 +1,46 @@
+body
+  header#main-screen.header.header-menu-item
+    .container
+      .row
+        .col-xs-12.col-sm-12.col-md-12.col-lg-12
+          h1.text-center Майки
+    /! container
+  /! header
+  section#shirt
+    .container
+      .shirt.general
+        = @active_block.text.html_safe
+        .row
+          .ident-shirt
+            .col-xs-12.col-sm-4.col-md-4.col-lg-4
+              .exampl.shirt-exampl
+                a href = fe_mans_shirt_url
+                  .shell-for-gradient
+                    img.img-responsive.center-block alt=("\u041F\u0440\u0438\u043C\u0435\u0440 \u0440\u0430\u0431\u043E\u0442\u044B") src="image/man.png" /
+                    span Мужские
+                    .gradient.shirt-gradient
+            .col-xs-12.col-sm-4.col-md-4.col-lg-4
+              .exampl.shirt-exampl
+                a href="#"
+                  .shell-for-gradient
+                    img.img-responsive.center-block alt=("\u041F\u0440\u0438\u043C\u0435\u0440 \u0440\u0430\u0431\u043E\u0442\u044B") src="image/man.png" /
+                    span Мужские
+                    .gradient.shirt-gradient
+            .col-xs-12.col-sm-4.col-md-4.col-lg-4
+              .exampl.shirt-exampl
+                a href="#"
+                  .shell-for-gradient
+                    img.img-responsive.center-block alt=("\u041F\u0440\u0438\u043C\u0435\u0440 \u0440\u0430\u0431\u043E\u0442\u044B") src="image/man.png" /
+                    span Мужские
+                    .gradient.shirt-gradient
+        .row
+          .ident-buttom
+            .col-xs-12.col-sm-12.col-md-12.col-lg-12
+              h3 Сервис печати на ткани любой сложности
+              p Пластичность образа имитирует определенный фабульный каркас. Выявляя устойчивые архетипы на примере художественного творчества, можно сказать, что мера аккумулирует определенный реализм. Ролевое поведение многопланово продолжает героический миф. Герменевтика возможна.
+        .row
+          .col-xs-12.col-sm-12.col-md-12.col-lg-12
+            button.btn.center-block
+              a href="#"  Создать свой дизайн
+    .back-white
+

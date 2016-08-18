@@ -1,0 +1,42 @@
+/* Код для подключения шрифта в /css/stylename.css */
+/* font-family: "GothamProRegular"; */
+@font-face {
+    font-family: "GothamProRegular";
+    src: asset-url("GothamPro/GothamProRegular/GothamProRegular.eot");
+    src: asset-url("GothamPro/GothamProRegular/GothamProRegular.eot?#iefix")format("embedded-opentype"),
+    asset-url("GothamPro/GothamProRegular/GothamProRegular.woff") format("woff"),
+    asset-url("GothamPro/GothamProRegular/GothamProRegular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+/* font-family: "GothamProBold"; */
+@font-face {
+    font-family: "GothamProBold";
+    src: asset-url("GothamPro/GothamProBold/GothamProBold.eot");
+    src: asset-url("GothamPro/GothamProBold/GothamProBold.eot?#iefix")format("embedded-opentype"),
+    asset-url("GothamPro/GothamProBold/GothamProBold.woff") format("woff"),
+    asset-url("GothamPro/GothamProBold/GothamProBold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+/* font-family: "GothamProBlack"; */
+@font-face {
+    font-family: "GothamProBlack";
+    src: asset-url("GothamPro/GothamProBlack/GothamProBlack.eot");
+    src: asset-url("GothamPro/GothamProBlack/GothamProBlack.eot?#iefix")format("embedded-opentype"),
+    asset-url("GothamPro/GothamProBlack/GothamProBlack.woff") format("woff"),
+    asset-url("GothamPro/GothamProBlack/GothamProBlack.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+/* font-family: "GothamProMedium"; */
+@font-face {
+    font-family: "GothamProMedium";
+    src: asset-url("GothamPro/GothamProMedium/GothamProMedium.eot");
+    src: asset-url("GothamPro/GothamProMedium/GothamProMedium.eot?#iefix")format("embedded-opentype"),
+    asset-url("GothamPro/GothamProMedium/GothamProMedium.woff") format("woff"),
+    asset-url("GothamPro/GothamProMedium/GothamProMedium.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}

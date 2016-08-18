@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Заголовок:</strong>
+  <%= @cp_news.title %>
+</p>
+
+<p>
+  <strong>Описание:</strong>
+  <%= @cp_news.description.html_safe %>
+</p>
+
+<p>
+  <strong>Анонс:</strong>
+  <%= @cp_news.anons %>
+</p>
+
+
+<%= link_to 'Ред.', edit_cp_news_path(@cp_news) %> |
+<%= link_to 'Назад', cp_news_index_path %>

@@ -1,0 +1,18 @@
+#modal6.uk-modal aria-hidden="true" style=("display: none; overflow-y: scroll;")
+  .uk-modal-dialog.modal-order
+    button.uk-modal-close.uk-close type="button"
+    h3.text-center Оставьте отзыв
+    = simple_form_for [:fe, Review.new], :defaults => { :input_html => { :class => "form-control" } }, remote: true do |f|
+      .form-group
+        = f.text_field :name, placeholder: "Василий", class: "form-control", required: true
+      .form-group
+        = f.text_field :cause, placeholder: "Причина", class: "form-control", required: true
+      .form-group
+        = f.text_field :comment, placeholder: "Комментарий", class: "form-control", required: true
+      .form-group
+        = f.input :photo, as: :file, label: "Фото"
+      .form-group
+        = f.submit "Отправить", :id => "addReview", :class => "btn btn-default btn-form-order"
+
+
+

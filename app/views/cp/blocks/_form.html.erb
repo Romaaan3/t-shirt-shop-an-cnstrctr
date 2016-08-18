@@ -1,0 +1,38 @@
+<%= form_for [:cp, @cp_block] do |f| %>
+  <% if @cp_block.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cp_block.errors.count, "error") %> prohibited this cp_block from being saved:</h2>
+
+      <ul>
+      <% @cp_block.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :text %><br>
+    <%= f.text_area :text, :class => "tinymce", :rows => 30  %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :keywords %><br>
+    <%= f.text_field :keywords %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+<%= tinymce :language => "ru" %>

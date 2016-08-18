@@ -1,0 +1,26 @@
+<div class="uk-container">
+  <%= simple_form_for [:cp, @cp_order], :html => {:class => 'uk-form'} do |f| %>
+  <%= f.error_notification %>
+
+  <div class="uk-form-row">
+    <%= f.input :name, label: false, placeholder: "Имя" %>
+    </div>
+  <div class="uk-form-row">
+    <%= f.input :mobile, label: false, placeholder: "Телефон" %>
+  </div>
+
+  <div class="uk-form-row">
+    <%= f.input :email, label: false, placeholder: "Email" %>
+  </div>
+    <div class="uk-form-row"
+    <%= f.input :comment, label: false, placeholder: "Комментарий" %>
+  </div>
+  <div class="uk-form-row">
+    <div class="form-actions">
+    <%= f.button :submit, "Создать" %>
+  </div>
+  </div>
+
+<% end %>
+
+</div>

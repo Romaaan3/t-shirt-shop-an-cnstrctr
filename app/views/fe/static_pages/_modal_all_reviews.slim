@@ -1,0 +1,26 @@
+#modal7.uk-modal aria-hidden="true" style=("display: none; overflow-y: scroll;")
+  .uk-modal-dialog.uk-modal-dialog-large.orange_back
+    button.uk-modal-close.uk-close type="button"
+    #customer-reviews.customer-reviews
+      .uk-container
+        .uk-grid
+          .uk-width-large-1-1
+            h2.text-center Отзывы клиентов
+        .row
+        -unless @all_reviews.empty?
+          -@all_reviews.each do |r|
+
+            .col-xs-12.col-sm-12.col-md-6.col-lg-6
+              .media.bg-media
+                .media-left
+                  a href="#"
+                    .media-object = image_tag r.photo.url(:thumbnail)
+                .media-body
+                  h4.media-heading.name = r.name
+                  h5.media-heading.subtitle = r.cause
+                  span.rev-comment = r.comment
+        - else
+          .col-xs-12.col-sm-12.col-md-12.col-lg-12
+            h1 Отзывы отсутствуют
+
+

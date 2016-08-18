@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Заказы</h1>
+
+<table class="uk-table uk-table-hover uk-animation-fade">
+  <thead>
+    <tr>
+      <th>Имя</th>
+      <th>Тел</th>
+      <th>Email</th>
+      <th>Комментарий</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cp_orders.each do |cp_order| %>
+      <tr>
+        <td><%= cp_order.name %></td>
+        <td><%= cp_order.mobile %></td>
+        <td><%= cp_order.email %></td>
+        <td><%= cp_order.comment %></td>
+        <td><%= link_to 'Показать', cp_order_path(cp_order) %></td>
+        <td><%= link_to 'Ред.', edit_cp_order_path(cp_order) %></td>
+        <td><%= link_to 'Удалить', cp_order_path(cp_order), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<div class="uk-grid">
+
+<div class="uk-width-1-1">
+<div class="nav">
+    <%= will_paginate @cp_orders, renderer: BootstrapPagination::Rails %>
+
+</div>
+</div>
+
+</div>
+
+<br>
+
+<%= link_to 'Новый заказ', new_cp_order_path %>

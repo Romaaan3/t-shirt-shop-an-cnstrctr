@@ -1,0 +1,237 @@
+<div class="preview" data-spy="scroll" data-target=".subnav" data-offset="80">
+
+
+    <div class="container">
+    <section id="typography">
+      <div class="page-header">
+        <h2 class="text-center">Конструктор</h2>
+      </div>
+      <div id="text-constructor">
+        <div class="row">
+          <div class="col-md-12">
+            <p style="margin-bottom: 15px;">Чтобы использовать конструктор, зайдите в полную версию</p>
+          </div>
+        </div>
+      </div>
+      <div id="body-constructor">
+
+      <!-- Headings & Paragraph Copy -->
+      <div class="row">
+        <div class="col-sm-12 col-md-3 col-lg-3">
+
+          <div class="tabbable"> <!-- Only required for left/right tabs -->
+          <h3>Выберите майку</h3>
+          <div class="label_type">
+            <input type="radio" name="type_shirt" class="type_shirt" id="man" value="man" checked="checked"/>
+            <label for="man">Мужская</label>
+            <input type="radio" name="type_shirt" class="type_shirt" id="woman" value="woman" />
+            <label for="woman">Женская</label>
+            <input type="radio" name="type_shirt" class="type_shirt" id="child" value="child"/>
+            <label for="child">Детская</label>
+          </div>
+
+          <h3>Выберите размер</h3>
+          <div class="label_size">
+            <input type="radio" name="size_shirt" class="size_shirt" id="extra_small_size" />
+            <label for="extra_small_size">XS</label>
+            <input type="radio" name="size_shirt" class="size_shirt" id="small_size" />
+            <label for="small_size">S</label>
+            <input type="radio" name="size_shirt" class="size_shirt" id="middle_size" checked="checked"/>
+            <label for="middle_size">M</label>
+            <input type="radio" name="size_shirt" class="size_shirt" id="large_size" />
+            <label for="large_size">L</label>
+            <input type="radio" name="size_shirt" class="size_shirt" id="extra_large_size" />
+            <label for="extra_large_size">XL</label>
+            <input type="radio" name="size_shirt" class="size_shirt" id="more_than_extra_large_size" />
+            <label for="more_than_extra_large_size">XLL</label>
+          </div>
+
+          <h3>Выберите цвет</h3>
+          <div class="well">
+              <ul class="nav">
+                <li class="color-preview" title="White" style="background-color:#ffffff;"></li>
+                <li class="color-preview" title="Black" style="background-color:#222222;"></li>
+                <li class="color-preview" title="Red" style="background-color:#ff0000;"></li>
+                <li class="color-preview" title="Blue" style="background-color:#0000ff;"></li>
+                <li class="color-preview" title="Orange" style="background-color:#ff8400;"></li>
+                <li class="color-preview" title="Gray" style="background-color:#838383;"></li>
+                <li class="color-preview" title="Green" style="background-color:#14ae00;"></li>
+                <li class="color-preview" title="Yellow" style="background-color:#fcff00;"></li>
+                <!-- <li class="color-preview" title="Dark Heather" style="background-color:#616161;"></li>
+                <li class="color-preview" title="Charcoal" style="background-color:#5b5b5b;"></li>
+                <li class="color-preview" title="Heather Orange" style="background-color:#fc8d74;"></li>
+                <li class="color-preview" title="Heather Dark Chocolate" style="background-color:#432d26;"></li>
+                <li class="color-preview" title="Salmon" style="background-color:#eead91;"></li>
+                <li class="color-preview" title="Chesnut" style="background-color:#806355;"></li>
+                <li class="color-preview" title="Dark Chocolate" style="background-color:#382d21;"></li>
+                <li class="color-preview" title="Citrus Yellow" style="background-color:#faef93;"></li>
+                <li class="color-preview" title="Avocado" style="background-color:#aeba5e;"></li>
+                <li class="color-preview" title="Kiwi" style="background-color:#8aa140;"></li>
+                <li class="color-preview" title="Irish Green" style="background-color:#1f6522;"></li>
+                <li class="color-preview" title="Scrub Green" style="background-color:#13afa2;"></li>
+                <li class="color-preview" title="Teal Ice" style="background-color:#b8d5d7;"></li>
+                <li class="color-preview" title="Heather Sapphire" style="background-color:#15aeda;"></li>
+                <li class="color-preview" title="Sky" style="background-color:#a5def8;"></li>
+                <li class="color-preview" title="Antique Sapphire" style="background-color:#0f77c0;"></li>
+                <li class="color-preview" title="Heather Navy" style="background-color:#3469b7;"></li>
+                <li class="color-preview" title="Cherry Red" style="background-color:#c50404;"></li> -->
+              </ul>
+            </div>
+        </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6">
+
+        <!--  EDITOR      -->
+          <div id="shirtDiv" class="page" style="width: 530px; height: 630px; position: relative; background-color: rgb(255, 255, 255);">
+            <%= image_tag "crew_front.png", :id => "tshirtFacing" %>
+            <div id="drawingArea" style="position: absolute;top: 100px;left: 160px;z-index: 10;width: 200px;height: 400px;">
+              <canvas id="tcanvas" width=200 height="400" class="hover" style="-webkit-user-select: none;"></canvas>
+              <div style="display: none;">
+                <canvas id="fcanvas" width=200 height="400" class="hover" style="display: none;"></canvas>
+                <canvas id="bcanvas" width=200 height="400" class="hover" style="display: none;"></canvas>
+                <canvas id="rscanvas" width=200 height="400" class="hover" style="display: none;"></canvas>
+                <canvas id="lscanvas" width=200 height="400" class="hover" style="display: none;"></canvas>
+              </div>
+
+
+            </div>
+          </div>
+<!--          <div id="shirtBack" class="page" style="width: 530px; height: 630px; position: relative; background-color: rgb(255, 255, 255); display:none;">-->
+<!--            <img src="img/crew_back.png"></img>-->
+<!--            <div id="drawingArea" style="position: absolute;top: 100px;left: 160px;z-index: 10;width: 200px;height: 400px;">          -->
+<!--              <canvas id="backCanvas" width=200 height="400" class="hover" style="-webkit-user-select: none;"></canvas>-->
+<!--            </div>-->
+<!--          </div>            -->
+
+        <!--  /EDITOR   -->
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-3">
+          <ul class="nav nav-tabs">
+            <li class="active"><a href="#tab1" data-toggle="tab">Дизайн</a></li>
+            <li><a href="#tab2" data-toggle="tab">Готовые фото</a></li>
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane active" id="tab1">
+               <div class="btn-group inline pull-left" id="texteditor" style="display:none; ">
+
+                 <button id="font-family" class="btn dropdown-toggle btn_constr" data-toggle="dropdown" title="Font Style"><i class="uk-icon-font" style="width:19px;height:19px;"></i></button>
+                  <ul class="dropdown-menu" role="menu" aria-labelledby="font-family-X">
+                    <li><a tabindex="-1" href="#" onclick="setFont('Arial');" class="Arial">Arial</a></li>
+                    <li><a tabindex="-1" href="#" onclick="setFont('Helvetica');" class="Helvetica">Helvetica</a></li>
+                    <li><a tabindex="-1" href="#" onclick="setFont('Myriad Pro');" class="MyriadPro">Myriad Pro</a></li>
+                    <li><a tabindex="-1" href="#" onclick="setFont('Delicious');" class="Delicious">Delicious</a></li>
+                    <li><a tabindex="-1" href="#" onclick="setFont('Verdana');" class="Verdana">Verdana</a></li>
+                    <li><a tabindex="-1" href="#" onclick="setFont('Georgia');" class="Georgia">Georgia</a></li>
+                    <li><a tabindex="-1" href="#" onclick="setFont('Courier');" class="Courier">Courier</a></li>
+                    <li><a tabindex="-1" href="#" onclick="setFont('Comic Sans MS');" class="ComicSansMS">Comic Sans MS</a></li>
+                    <li><a tabindex="-1" href="#" onclick="setFont('Impact');" class="Impact">Impact</a></li>
+                    <li><a tabindex="-1" href="#" onclick="setFont('Monaco');" class="Monaco">Monaco</a></li>
+                    <li><a tabindex="-1" href="#" onclick="setFont('Optima');" class="Optima">Optima</a></li>
+                    <li><a tabindex="-1" href="#" onclick="setFont('Hoefler Text');" class="Hoefler Text">Hoefler Text</a></li>
+                    <li><a tabindex="-1" href="#" onclick="setFont('Plaster');" class="Plaster">Plaster</a></li>
+                    <li><a tabindex="-1" href="#" onclick="setFont('Engagement');" class="Engagement">Engagement</a></li>
+                        </ul>
+                  <button id="text-bold" class="btn btn_constr" data-original-title="Bold"><i class="uk-icon-bold"></i></button>
+                  <button id="text-italic" class="btn btn_constr" data-original-title="Italic"><i class="uk-icon-italic"></i></button>
+                  <button id="text-strike" class="btn btn_constr" title="Strike" style=""><i class="uk-icon-strikethrough"></i></button>
+                <button id="text-underline" class="btn btn_constr" title="Underline" style=""><i class="uk-icon-underline"></i></button>
+
+                <div class="btn-text-color">
+                  <%= color_field_tag 'font_color' %>
+                  <%= color_field_tag 'stroke_color' %>
+                </div>
+              </div>
+              <h3>Выберите сторону</h3>
+              <div align="center" style="min-height: 32px;">
+              <div class="clearfix">
+
+              <div class="pull-right" align="" id="imageeditor" style="display:block">
+                <div class="btn-group">
+                    <button id="flip" type="button" class="btn btn_constr" title="Show Back View" style="background: #4183d7 url(<%= image_path "shirt_small.png"%>) no-repeat center center; background-size: 90%;">
+                      <span style="background: #fff url(<%= image_path "icon_side.png"%>) no-repeat center center;  background-size: 90%;"></span>
+                    </button>
+                    <button class="btn btn_constr" id="sleeve" title="Show Left Sleeve" type="button" style="background: #4183d7 url(<%= image_path "sleeve_small.png"%>) no-repeat center center; background-size: 40%;">
+                      <span style="background: #fff url(<%= image_path "icon_side.png"%>) no-repeat center center;  background-size: 90%;"></span>
+                    </button>
+                    <button class="btn btn_constr" id="bring-to-front" title="Bring to Front" style="display: none;"><i class=" glyphicon glyphicon-arrow-up" style="height:19px;"></i></button>
+                    <button class="btn btn_constr" id="send-to-back" title="Send to Back" style="display: none;"><i class="glyphicon glyphicon-arrow-down" style="height:19px;"></i></button>
+                    <button id="remove-selected" class="btn btn_constr" title="Delete selected item" style="display: none;"><i class="glyphicon glyphicon-trash" style="height:19px;"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+              <h3>Добавить элементы</h3>
+              <div class="input-append">
+                <label for="text-string">Добавить текст</label><br>
+                <input style="width: 82%;" class="col-md-2" id="text-string" type="text"><button id="add-text" class="btn btn_constr" title="Add text"><i class="glyphicon glyphicon-plus"></i></button>
+
+                <label for="img-string">Добавить изображение</label><br>
+                <div class="wrap_img_const" style="position: relative;">
+                  <input style="width: 82%;" class="col-md-2" id="img-string" type="text" placeholder="Выберите изображение...">
+
+                  <label for="the-file-input" class="btn_constr btn_constr_img"><i class="glyphicon glyphicon-plus"></i></label>
+                  <input id="the-file-input" type="file" name="img" accept="image/jpeg,image/png,image/gif">
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane" id="tab2">
+              <div class="well">
+              <div id="avatarlist">
+                <div id="users_pic"> </div>
+
+                <%- @constructor_images.each do |i| %>
+                  <img style="cursor:pointer;" class="img-polaroid" src="<%= i.img.url %>">
+                <% end %>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <button class="btn center-block" id="order_shirt" data-uk-modal="{target:'#modal8'}">
+              <a data-original-title="" >Заказать майку </a>
+            </button>
+            <%= render 'modal_order' %>
+          </div>
+        </div>
+<!--        <div class="span3">
+          <div class="well">
+            <h3>Total Prices</h3>
+            <p>
+              <table class="table">
+                <tr>
+                  <td>Short Sleeve</td>
+                  <td align="right">$12.49</td>
+                </tr>
+                <tr>
+                  <td>Front Design</td>
+                  <td align="right">$4.99</td>
+                </tr>
+                <tr>
+                  <td>Back Design</td>
+                  <td align="right">$4.99</td>
+                </tr>
+                <tr>
+                  <td><strong>Total</strong></td>
+                  <td align="right"><strong>$22.47</strong></td>
+                </tr>
+              </table>
+            </p>
+          <button type="button" class="btn btn-large btn-block btn-success" name="addToTheBag" id="addToTheBag">Add to bag <i class="icon-briefcase icon-white"></i></button>
+          </div>
+        </div> -->
+
+      </div>
+      </div>
+
+    </section>
+    </div><!-- /container -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+  </div>
+
+

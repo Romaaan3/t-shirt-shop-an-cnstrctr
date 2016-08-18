@@ -1,0 +1,25 @@
+#modal8.uk-modal aria-hidden="true"
+  .uk-modal-dialog.wid.modal-order
+    button.uk-modal-close.uk-close type="button"
+    h3 Оформление заказа
+    = simple_form_for [:fe, @order] , :defaults => { :input_html => { :class => "form-control" } }, remote: true do |f|
+      .form-group
+        = f.input :name, placeholder: "Имя", label: false, required: true
+      .form-group
+        = f.input :mobile, placeholder: "Телефон", label: false
+      .form-group
+        = f.input :email, placeholder: "Email", label: false
+
+      .form-group
+        = f.input :comment, placeholder: "Комментарий", label: false
+      .form-group
+      = f.hidden_field :front_img, :id => "makeOrderBack"
+      = f.hidden_field :back_img, :id => "makeOrderFront"
+      = f.hidden_field :right_sleeve_img, :id => "makeOrderRS"
+      = f.hidden_field :left_sleeve_img, :id => "makeOrderLS"
+      = f.hidden_field :color, :id => "makeOrderColor"
+      = f.hidden_field :size, :id => "makeOrderSize"
+      = f.hidden_field :shirt_type, :id => "makeOrderType"
+      input#array name="array" type="hidden" /
+      .form-group
+        = f.submit "Оформить заказ", :id => "makeOrder", :class => "btn btn-default btn-form-order"

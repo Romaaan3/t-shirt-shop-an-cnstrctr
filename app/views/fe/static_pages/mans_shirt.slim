@@ -1,0 +1,97 @@
+- @active_block = Block.find_by_name("Майки")
+body
+  header#main-screen.header.header-menu-item
+    .container
+      .row
+        .col-xs-12.col-sm-12.col-md-12.col-lg-12
+          h1.text-center Майки
+    /! container
+  /! header
+  section#shirt-man
+    .container
+      .shirt-man
+        .row
+          .col-xs-12.col-sm-12.col-md-12.col-lg-12
+            h2.text-center Мужская майка
+        .row
+          .ident-shirt
+            .col-xs-12.col-sm-7.col-md-6.col-lg-6
+              = image_tag "shirt-man.png", class: "image-responsive"
+              .table-responsive
+                table.table
+                  thead
+                    tr
+                      th Размеры
+                      th Ширина*
+                      th Длина*
+                  tbody
+                    tr
+                      td S
+                      td 48.5
+                      td 69.5
+                    tr
+                      td M
+                      td 53.5
+                      td 72
+                    tr
+                      td L
+                      td 56
+                      td 74.5
+                    tr
+                      td XL
+                      td 61
+                      td 77
+                    tr
+                      td XXL
+                      td 66
+                      td 78.5
+                    tr
+                      td XXXL
+                      td 71
+                      td 80
+                    tr
+                      td Tol +/-
+                      td 2.5
+                      td 2.5
+              .small-info
+                ul
+                  li
+                    |*Измеряется поперек изделия на 1 см ниже проема рукава
+                  li
+                    | **Изменяется от самой высокой точки на плече до нижнего
+                    | края изделия
+            .col-xs-12.col-sm-5.col-md-6.col-lg-6
+              h3 Ткань
+              span 100% хлопок* нить Belcoro
+              ul
+                li – Пепельный цвет: 99% хлопок, 1% полиэстер
+                li – Серо-лиловый цвет: 97% хлопок, 3% полиэстер
+              h3 Плотность ткани
+              ul
+                li белая – 160 г/м2
+                li цветная – 165 г/м2
+              h3 Размеры
+              ul
+                li
+                  | Размеры XXXL представлен только в 4 цветах: белый, чёрный,
+                  | тёносиний и серо лиловый
+              h3 А также
+              span Доступны изделия для женщин и для детей
+              ul
+                li – Обновленный крой рукава
+                li
+                  | – Вырез лодочкой из смеси хлопка и лайкры с эластичной окантовкой;
+                  | вырез обработан тесьмой, что делает изделие очень удобным
+                li
+                  | – Теперь шьется на основе нити Belcoro,
+                  | что обеспечивает большую мягкость ткани, а также более качественное нанесение изображений
+                li – Тщательно спроектированное лекало для нестандартной печати
+              a href="#"
+                = image_tag "logo-fruit.png", class: "logo"
+              a href="#"
+                = image_tag "logo-belcoro.png", class: "logo"
+        .row
+          .col-xs-12.col-sm-12.col-md-12.col-lg-12
+            button.btn.center-block
+              a href="#"  Создать свой дизайн
+

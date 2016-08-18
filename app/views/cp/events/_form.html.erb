@@ -1,0 +1,25 @@
+<div class="uk-container">
+<%= simple_form_for [:cp, @cp_event], :html => {:class => 'uk-form'} do |f| %>
+  <%= f.error_notification %>
+
+  <div class="uk-form-row">
+    <%= f.input :title, label: false, placeholder: "Заголовок" %>
+  </div>
+  <div class="uk-form-row">
+    <%= f.input :anons, label: false, placeholder: "Анонс" %>
+  </div>
+  <div class="uk-form-row">
+    <%= f.text_area :description, :class => "tinymce", :rows => "15"%>
+  </div>
+    <div class="uk-form-row">
+      <%= f.file_field :photo, label: "Фото" %>
+    </div>
+  <div class="uk-form-row">
+    <div class="form-actions">
+    <%= f.button :submit, "Создать" %>
+  </div>
+  </div>
+
+<% end %>
+</div>
+<%= tinymce :language => "ru" %>

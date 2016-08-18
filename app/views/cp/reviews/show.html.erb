@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Имя:</strong>
+  <%= @cp_review.name %>
+</p>
+
+<p>
+  <strong>Причина:</strong>
+  <%= @cp_review.cause %>
+</p>
+
+<p>
+  <strong>Комментарий:</strong>
+  <%= @cp_review.comment %>
+</p>
+
+<p>
+  <strong>Isvalid:</strong>
+  <%= @cp_review.isValid %>
+</p>
+
+<%= link_to 'Ред.', edit_cp_review_path(@cp_review) %> |
+<%= link_to 'Назад', cp_reviews_path %>

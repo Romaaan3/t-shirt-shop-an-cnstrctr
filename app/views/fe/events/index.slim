@@ -1,0 +1,29 @@
+body
+  header#main-screen.header.header-menu-item
+    .container
+      .row
+        .col-xs-12.col-sm-12.col-md-12.col-lg-12
+          h1.text-center.text-muted Event-опт
+    /! container
+  /! header
+  section#events
+    .container
+      .events.general
+        .row
+          .col-xs-12.col-sm-12.col-md-12.col-lg-12
+            h2.text-center.text-muted Делаем печать на майках высокого качества
+        .row
+          - @events.each do |event|
+            .col-xs-12.col-sm-6.col-md-6.col-lg-6
+              .exampl.events-exampl
+                a href = fe_event_path(event) title=""
+                  .shell-for-gradient
+                    = image_tag event.photo.url(:slider), class: "img-responsive center-block"
+
+                    .gradient.events-gradient
+                  span = event.title
+                  span = event.anons
+
+        = @active_block.text.html_safe
+    .back-white
+

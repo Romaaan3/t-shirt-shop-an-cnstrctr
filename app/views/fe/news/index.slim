@@ -1,0 +1,29 @@
+
+header#main-screen.header.header-menu-item
+  .container
+    .row
+      .col-xs-12.col-sm-12.col-md-12.col-lg-12
+        h1.text-center.text-muted Новости
+  /! container
+/! header
+section#news
+  .container
+    .news.general
+      .row
+        .col-xs-12.col-sm-12.col-md-12.col-lg-12
+          h2.text-center.text-muted Свежие новости
+      .row
+        - @news.each do |one|
+          .col-xs-12.col-sm-12.col-md-6.col-lg-6
+            article
+              .block-news
+                h3 = one.title
+                p = one.anons
+                span.news-date = distance_of_time_in_words_to_now one.created_at
+                = link_to "Узнать больше", fe_news_path(one), class: "btn"
+
+      .row
+        .col-xs-12.col-sm-12.col-md-12.col-lg-12
+          nav
+            = will_paginate @news
+.back-white

@@ -1,0 +1,11 @@
+<%= simple_form_for [:cp, @cp_constructor_image], :html => {:class => 'uk-form'} do |f| %>
+  <%= f.error_notification %>
+
+  <div class="uk-form-row">
+  <%= f.input :img, as: :file, label: "Фото" %>
+  </div>
+  <div class="uk-form-row"></div>
+  <div class="uk-form-row">
+    <%= f.button :submit, "Добавить фото в конструктор" %>
+  </div>
+<% end %>

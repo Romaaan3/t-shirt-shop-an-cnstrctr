@@ -1,0 +1,22 @@
+<%= simple_form_for [:cp, @cp_review], :html => {:class => 'uk-form'} do |f| %>
+  <%= f.error_notification %>
+
+  <div class="uk-form-row">
+    <%= f.input :name, label: false, placeholder: "Имя", required: true %>
+  </div>
+  <div class="uk-form-row">
+    <%= f.input :cause, label: false, placeholder: "Причина", required: true%>
+  </div>
+  <div class="uk-form-row">
+    <%= f.input :comment, label: false, placeholder: "Комментарий", required: true%>
+  </div>
+  <div class="uk-form-row">
+    <%= f.input :photo, as: :file, label: "Фото" %>
+  </div>
+  <div class="uk-form-row">
+    <%= f.button :submit, "Создать отзыв"%>
+  </div>
+  <div class="uk-form-row">
+
+  </div>
+<% end %>

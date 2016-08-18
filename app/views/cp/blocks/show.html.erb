@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @cp_block.name %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @cp_block.text %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @cp_block.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @cp_block.description %>
+</p>
+
+<p>
+  <strong>Keywords:</strong>
+  <%= @cp_block.keywords %>
+</p>
+
+<%= link_to 'Edit', edit_cp_block_path(@cp_block) %> |
+<%= link_to 'Back', cp_blocks_path %>

@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Запросы</h1>
+
+<table class="uk-table uk-table-hover uk-animation-fade">
+  <thead>
+    <tr>
+      <th>Имя</th>
+      <th>Email</th>
+      <th>Сообщение</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cp_requests.each do |cp_request| %>
+      <tr>
+        <td><%= cp_request.name %></td>
+        <td><%= cp_request.email %></td>
+        <td><%= cp_request.comment %></td>
+        <td><%= link_to 'Показать', cp_request_path(cp_request) %></td>
+        <td><%= link_to 'Ред.', edit_cp_request_path(cp_request) %></td>
+        <td><%= link_to 'Удалить', cp_request_path(cp_request), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<div class="uk-grid">
+
+<div class="uk-width-1-1">
+<div class="nav">
+    <%= will_paginate @cp_requests, renderer: BootstrapPagination::Rails %>
+
+</div>
+</div>
+
+</div>
+
+<br>
+
+<%= link_to 'Новый запрос', new_cp_request_path %>

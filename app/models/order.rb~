@@ -1,0 +1,2 @@
+class Cp::Order < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class Cp::Block < ApplicationRecord
+end

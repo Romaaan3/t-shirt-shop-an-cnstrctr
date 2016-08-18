@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Имя:</strong>
+  <%= @cp_request.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @cp_request.email %>
+</p>
+
+<p>
+  <strong>Комментарий:</strong>
+  <%= @cp_request.comment %>
+</p>
+
+<%= link_to 'Ред.', edit_cp_request_path(@cp_request) %> |
+<%= link_to 'Назад', cp_requests_path %>

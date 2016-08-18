@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>События</h1>
+
+<table class="uk-table uk-table-hover uk-animation-fade">
+  <thead>
+    <tr>
+      <th>Заголовок</th>
+      <th>Анонс</th>
+
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cp_events.each do |cp_event| %>
+      <tr>
+        <td><%= cp_event.title %></td>
+        <td><%= cp_event.anons %></td>
+
+        <td><%= link_to 'Показать', cp_event_path(cp_event) %></td>
+        <td><%= link_to 'Ред.', edit_cp_event_path(cp_event) %></td>
+        <td><%= link_to 'Удалить', cp_event_path(cp_event), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<div class="uk-grid">
+
+<div class="uk-width-1-1">
+<div class="nav">
+    <%= will_paginate @cp_events, renderer: BootstrapPagination::Rails %>
+
+</div>
+</div>
+
+</div>
+
+<br>
+
+<%= link_to 'Добавить событие', new_cp_event_path %>

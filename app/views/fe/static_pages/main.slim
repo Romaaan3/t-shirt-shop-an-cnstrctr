@@ -1,0 +1,124 @@
+header#main-screen.header
+  .container
+    .row
+      .col-xs-12.col-sm-12.col-md-12.col-lg-12
+        h1.text-center.text-muted Печать под контролем
+    .row
+      .col-xs-12.col-sm-12.col-md-12.col-lg-12
+        h2.text-center Сервис печати на ткани любой сложности
+    .row
+      .col-xs-12.col-sm-12.col-md-12.col-lg-12
+        button.btn.center-block
+          a.scroll href="#constr"  Создать свой дизайн
+    .row
+      .col-xs-12.col-sm-12.col-md-12.col-lg-12
+        .scroll-down.text-center
+          = image_tag("computer.svg")
+          p Листай ниже
+section#constructor
+  .container
+    .row
+      .col-xs-12.col-sm-12.col-md-12.col-lg-12
+
+    .row
+      .col-xs-12.col-sm-12.col-md-12.col-lg-12#constr
+        = render 'editor'
+section#advantages.advantages
+  .container style="z-index:34;"
+    .row
+      .col-xs-12.col-sm-12.col-md-12.col-lg-12
+        h2.text-center 3 причины обратиться к нам
+    .row
+      .col-xs-12.col-sm-4.col-md-4.col-lg-4
+        .our-advantages
+          = image_tag("icon-cause.png", :class => "img-responsive center-block")
+          h3 Качество
+          p.center-block Вся наша продукция из 100% хлопка
+      .col-xs-12.col-sm-4.col-md-4.col-lg-4
+        .our-advantages
+          = image_tag("icon-cause.png", :class => "img-responsive center-block")
+          h3 Качество
+          p.center-block Вся наша продукция из 100% хлопка
+      .col-xs-12.col-sm-4.col-md-4.col-lg-4
+        .our-advantages
+          = image_tag("icon-cause.png", :class => "img-responsive center-block")
+          h3 Качество
+          p.center-block Вся наша продукция из 100% хлопка
+    .row
+      .col-xs-12.col-sm-12.col-md-12.col-lg-12
+        button.btn.center-block.btn-advantages
+          a.scroll href="#constr"  Создать свою майку
+section#work-examples.work-examples
+  .container style="z-index: 34;"
+    .row
+      .col-xs-12.col-sm-12.col-md-12.col-lg-12
+        h2.text-center Выполненные работы
+    .row
+      .scroll-work-examples
+
+        div data-uk-slider=""
+          .uk-slider-container
+            ul.uk-slider.uk-grid-width-medium-1-4
+              - @products.each do |p|
+                li
+                  .exampl
+                    .shell-for-gradient
+                      = image_tag(p.photo.url(:slider), :class => "img-responsive center-block")
+                      .gradient
+                    a href= image_path(p.photo.url) data-uk-lightbox="" data-lightbox-type="image"
+                      span = p.name
+                      span Майка
+
+          a href="#" class="uk-slidenav uk-slidenav-contrast uk-slidenav-previous" data-uk-slider-item="previous" draggable="false"
+          a href="#" class="uk-slidenav uk-slidenav-contrast uk-slidenav-next" data-uk-slider-item="next" draggable="false"
+
+    .row
+      .col-xs-12.col-sm-12.col-md-12.col-lg-12
+        button.btn.center-block
+          a.scroll href="#constr"  Создать свой дизайн
+section#customer-reviews.customer-reviews
+  .container
+    .row
+      .col-xs-12.col-sm-12.col-md-12.col-lg-12
+        h2.text-center Отзывы клиентов
+    .row
+    -unless @reviews.empty?
+      -@reviews.each do |r|
+
+        .col-xs-12.col-sm-12.col-md-6.col-lg-6
+          .media.bg-media
+            .media-left
+              a href="#"
+                .media-object = image_tag r.photo.url(:thumbnail)
+            .media-body
+              h4.media-heading.name = r.name
+              h5.media-heading.subtitle = r.cause
+              span.rev-comment = r.comment
+    - else
+      .col-xs-12.col-sm-12.col-md-12.col-lg-12
+        h1 Отзывы отсутствуют
+
+    .row
+      .col-xs-12.col-sm-12.col-md-12.col-lg-12
+        button.btn.center-block.add_review data-uk-modal="{target:'#modal6'}"
+          a Оставить свой отзыв
+        == render "modal_review"
+
+        a.btn1 data-uk-modal="{target:'#modal7'}" Все отзывы (#{@all_reviews.count})
+        == render "modal_all_reviews"
+section#sochial
+  .container
+    .row
+      .col-xs-12.col-sm-12.col-md-12.col-lg-12
+        h2.text-center Следи за нами
+    .row
+      .col-xs-12.col-sm-12.col-md-12.col-lg-12
+        #vk_groups style=('margin: 0 auto;')
+        javascript:
+           VK.Widgets.Group("vk_groups", {mode: 0, width: "260", height: "400", color1: 'FFFFFF', color2: '2B587A', color3: '5B7FA6'}, 20003922);
+
+      / .col-xs-12.col-sm-3.col-md-3.col-lg-3
+      /     #fb-root
+      /     javascript:
+      /       (function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7"; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'facebook-jssdk'));
+

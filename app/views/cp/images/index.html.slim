@@ -1,0 +1,21 @@
+h1 Listing cp_images
+
+table
+  thead
+    tr
+      th Order
+      th
+      th
+      th
+
+  tbody
+    - @cp_images.each do |cp_image|
+      tr
+        td = cp_image.order
+        td = link_to 'Show', cp_image
+        td = link_to 'Edit', edit_cp_image_path(cp_image)
+        td = link_to 'Destroy', cp_image, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Image', new_cp_image_path

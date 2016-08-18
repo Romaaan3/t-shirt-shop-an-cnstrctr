@@ -1,0 +1,8 @@
+= simple_form_for(@cp_image) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.association :order
+
+  .form-actions
+    = f.button :submit

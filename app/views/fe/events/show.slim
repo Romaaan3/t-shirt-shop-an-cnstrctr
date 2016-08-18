@@ -1,0 +1,26 @@
+body
+  header#main-screen.header.header-menu-item
+    .container
+      .row
+        .col-xs-12.col-sm-12.col-md-12.col-lg-12
+          h1.text-center.text-muted Event-опт
+    /! container
+  /! header
+  section#events
+    .container
+      .events.event-inner
+        .row
+          .col-xs-12.col-sm-12.col-md-12.col-lg-12
+            h2.text-center.text-muted = @event.title
+        .row
+          .col-xs-12.col-sm-12.col-md-12.col-lg-12
+            .ident-buttom
+              p = @event.description.html_safe
+
+        .row
+          .col-xs-12.col-sm-12.col-md-12.col-lg-12
+            .sochial-bottom.text-center
+              .ya-share2 data-counter="" data-services="vkontakte,facebook,gplus,twitter"
+              span Рассказать друзьям
+
+

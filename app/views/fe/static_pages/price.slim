@@ -1,0 +1,23 @@
+body
+  header#main-screen.header.header-menu-item
+    .container
+      .row
+        .col-xs-12.col-sm-12.col-md-12.col-lg-12
+          h1.text-center.text-muted Цена
+    /! container
+  /! header
+  section#price
+    .container
+      .price.general
+        = @active_block.text.html_safe
+
+
+    .container
+      .price
+        .row
+          .col-xs-12.col-sm-12.col-md-12.col-lg-12
+            button.btn.center-block
+              a href="#"  Создать свой дизайн
+    .back-white
+        javascript:
+          $('.owl-carousel').owlCarousel({ loop:true, margin:10, responsive:{ 0:{ items:1, nav:false }, 600:{ items:3, nav:false }, 0:{ nav: false, items:4 } } })

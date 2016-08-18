@@ -1,0 +1,2 @@
+class Cp::NewsPhoto < ApplicationRecord
+end

@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Название:</strong>
+  <%= @cp_product.name %>
+</p>
+
+<p>
+  <strong>Описание:</strong>
+  <%= @cp_product.description %>
+</p>
+
+
+<p>
+<%= image_tag @cp_product.photo.url %>
+</p>
+<%= link_to 'Ред.', edit_cp_product_path(@cp_product) %> |
+<%= link_to 'Назад', cp_products_path %>

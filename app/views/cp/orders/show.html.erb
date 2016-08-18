@@ -1,0 +1,81 @@
+<div class="uk-uk-container">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Имя:</strong>
+  <%= @cp_order.name %>
+</p>
+
+<p>
+  <strong>Телефон:</strong>
+  <%= @cp_order.mobile %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @cp_order.email %>
+</p>
+
+<p>
+  <strong>Тип:</strong>
+  <%= @cp_order.shirt_type %>
+</p>
+
+<p>
+  <strong>Размер:</strong>
+  <%= @cp_order.size %>
+</p>
+
+<p>
+  <strong>Комментарий:</strong>
+  <%= @cp_order.comment %>
+</p>
+<strong>Передняя сторона</strong>
+<div id="shirtDiv" class="page" style="width: 530px; height: 630px; position: relative; background-color: <%= @cp_order.color%>;">
+  <%= image_tag "crew_front.png", :id => "tshirtFacing" %>
+  <div id="drawingArea" style="position: absolute;top: 100px;left: 160px;z-index: 10;width: 200px;height: 400px;">
+  <%= image_tag @cp_order.front_image.url %>
+
+  </div>
+  </div>
+
+<strong>Задняя сторона</strong>
+<div id="shirtDiv" class="page" style="width: 530px; height: 630px; position: relative; background-color: <%= @cp_order.color%>;">
+            <%= image_tag "crew_back.png", :id => "tshirtFacing" %>
+            <div id="drawingArea" style="position: absolute;top: 100px;left: 160px;z-index: 10;width: 200px;height: 400px;">
+<%= image_tag @cp_order.back_image.url %>
+
+            </div>
+            </div>
+
+
+<strong>Правый рукав</strong>
+<div id="shirtDiv" class="page" style="width: 530px; height: 630px; position: relative; background-color: <%= @cp_order.color%>;">
+            <%= image_tag "sleeve_right.png", :id => "tshirtFacing" %>
+            <div id="drawingArea" style="position: absolute;top: 100px;left: 160px;z-index: 10;width: 200px;height: 400px;">
+  <%= image_tag @cp_order.right_sleeve_image.url %>
+
+            </div>
+            </div>
+
+<strong>Левый рукав</strong>
+<div id="shirtDiv" class="page" style="width: 530px; height: 630px; position: relative; background-color: <%= @cp_order.color%>;">
+            <%= image_tag "sleeve_left.png", :id => "tshirtFacing" %>
+            <div id="drawingArea" style="position: absolute;top: 100px;left: 160px;z-index: 10;width: 200px;height: 400px;">
+  <%= image_tag @cp_order.left_sleeve_image.url %>
+
+            </div>
+            </div>
+
+
+<strong>Загруженные фото</strong>
+<%- @cp_order.images.each do |i| %>
+  <p>
+  <%= image_tag i.image.url %>
+  </p>
+<% end %>
+
+
+<%= link_to 'Edit', edit_cp_order_path(@cp_order) %> |
+<%= link_to 'Back', cp_orders_path %>
+</div>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Заголовок:</strong>
+  <%= @cp_event.title %>
+</p>
+
+<p>
+  <strong>Анонс:</strong>
+  <%= @cp_event.anons %>
+</p>
+
+<p>
+  <strong>Описание:</strong>
+  <%= @cp_event.description.html_safe %>
+</p>
+
+<%= link_to 'Ред.', edit_cp_event_path(@cp_event) %> |
+<%= link_to 'Назад', cp_events_path %>

@@ -1,0 +1,40 @@
+body
+  header#main-screen.header.header-menu-item
+    .container
+      .row
+        .col-xs-12.col-sm-12.col-md-12.col-lg-12
+          h1.text-center Контакты
+    /! container
+  /! header
+  section#contacts
+    .container
+      .contacts.general
+        = @active_block.text.html_safe
+    .back-white
+  .map-image
+    .map
+      script charset="utf-8" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=DBXMoR8bCg2bfMpza98zZS9JXTHmnvEJ&width=100%&height=500&lang=ru_RU&sourceType=constructor" type="text/javascript"
+
+      = simple_form_for [:fe, Request.new], remote: true do |f|
+        .contacts-form
+          h4 Пишите, мы на связи
+          = f.input :name, placeholder: "Введите ваше имя", label: false, input_html: { name: "name", size: "40" }
+          br/
+          = f.input :email, placeholder: "E-mail", label: false, input_html: { name: "email"}, required: true
+          br/
+          = f.input :comment, placeholder: "Сообщение", label: false, input_html: { name: "comment", cols: "40", rows: "3"}, required: true
+
+          br/
+          input type="submit" value="Отправить" /
+          br/
+    .contacts-form.contacts-form-mob
+      h4 Пишите, мы на связи
+      form action="" method="POST"
+        input name="name" placeholder=("Введите имя") required="" size="40" type="text" /
+        br/
+        input name="mail" placeholder=("Введите email") required="" type="email" /
+        br/
+        textarea cols="40" name="comment" placeholder="Введите комментанрий" rows="3" style=("resize: none;")
+        br/
+        input type="submit" value="Отправить" /
+        br/

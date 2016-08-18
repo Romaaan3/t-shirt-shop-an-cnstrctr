@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @cp_subscriber.email %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @cp_subscriber.active %>
+</p>
+
+<%= link_to 'Edit', edit_cp_subscriber_path(@cp_subscriber) %> |
+<%= link_to 'Back', cp_subscribers_path %>

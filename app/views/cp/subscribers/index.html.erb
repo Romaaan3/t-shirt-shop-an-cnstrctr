@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Cp Subscribers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Active</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cp_subscribers.each do |cp_subscriber| %>
+      <tr>
+        <td><%= cp_subscriber.email %></td>
+        <td><%= cp_subscriber.active %></td>
+        <td><%= link_to 'Show', cp_subscriber_path(cp_subscriber) %></td>
+        <td><%= link_to 'Edit', edit_cp_subscriber_path(cp_subscriber) %></td>
+        <td><%= link_to 'Destroy', cp_subscriber_path(cp_subscriber), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Subscriber', new_cp_subscriber_path %>

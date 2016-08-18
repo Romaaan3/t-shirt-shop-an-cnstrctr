@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Блоки</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cp_blocks.each do |cp_block| %>
+      <tr>
+        <td><%= cp_block.name %></td>
+
+        <td><%= link_to 'Показ.', cp_block_path(cp_block) %></td>
+        <td><%= link_to 'Ред.', edit_cp_block_path(cp_block) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+ <%= link_to 'New Block', new_cp_block_path %>

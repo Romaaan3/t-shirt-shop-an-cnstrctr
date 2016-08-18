@@ -1,0 +1,2 @@
+module Cp::ReviewsHelper
+end

@@ -1,0 +1,19 @@
+h1 Listing cp_news_photos
+
+table
+  thead
+    tr
+      th
+      th
+      th
+
+  tbody
+    - @cp_news_photos.each do |cp_news_photo|
+      tr
+        td = link_to 'Show', cp_news_photo
+        td = link_to 'Edit', edit_cp_news_photo_path(cp_news_photo)
+        td = link_to 'Destroy', cp_news_photo, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New News photo', new_cp_news_photo_path

@@ -1,0 +1,8 @@
+p Свежая новость на нашем сайте!
+
+p = @one.title
+p = @one.anons
+p
+  | #{link_to "Подробнее", fe_news_url(@one)}
+p
+  | #{link_to "Отписаться", fe_unsub_url(secret_name: @subscriber.secret_name)}

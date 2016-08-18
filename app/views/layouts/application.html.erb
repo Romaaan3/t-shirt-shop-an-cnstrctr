@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= @active_block.title %></title>
+    <meta name="description" content="<%= @active_block.description %>">
+    <meta name="author" content="">
+    <%- unless @active_block.keywords.blank? %>
+      <meta content="<%= @active_block.keywords %>" name="keywords" %>
+    <% end %>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+  <%= javascript_include_tag "http://vk.com/js/api/openapi.js" %>
+  <%= javascript_include_tag "//yastatic.net/es5-shims/0.0.2/es5-shims.min.js" %>
+  <%= javascript_include_tag "//yastatic.net/share2/share.js" %>
+
+
+</head>
+<body>
+
+
+<p id="notice" style="display:none;"><%= notice %></p>
+  <div class="wrapper">
+    <div class="site-wrapper">
+      <div class="site-wrapper-inner">
+        <div class="header-bar">
+          <div class="container">
+            <div class="row">
+              <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                <a href="#" class="text-center" title="Main page"><%= image_tag("logo.png", :alt => "logo") %></a>
+              </div>
+              <nav class="navbar navbar-default" id="top-nav">
+                <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+                  <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </button>
+                  </div>
+                  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right" >
+                          <li <%- if @active_block.title == "Главная"%>class="active"<% end %>><a href="<%= fe_root_url %>">Главная <span class="sr-only">(current)</span></a></li>
+                          <li <%- if @active_block.title == "Майки"%>class="active"<% end %>><a href="<%= fe_shirts_url %>">Майки</a></li>
+                          <li <%- if @active_block.title == "Цена"%>class="active"<% end %>><a href="<%= fe_price_url%>">Цена</a></li>
+                          <li <%- if @active_block.title == "Новости"%>class="active"<% end %>><a href="<%= fe_news_index_url %>">Новости</a></li>
+                          <li <%- if @active_block.title == "Events-опт"%>class="active"<% end %>><a href="<%= fe_events_url%>">Events-опт</a></li>
+                          <li <%- if @active_block.title == "Оплата и доставка"%>class="active"<% end %>><a href="<%= fe_dip_url %>">Оплата и доставка</a></li>
+                          <li <%- if @active_block.title == "Контакты"%>class="active"<% end %>><a href="<%= fe_kontakty_url%>">Контакты</a></li>
+                        </ul>
+                  </div>
+                </div>
+              </nav>
+
+            </div>
+          </div>
+        </div>
+
+        <%=yield%>
+
+    <footer class="footer">
+      <div class="footer-top">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-5 col-lg-5">
+              <div class="adress">
+                <h4>Приходите в гости</h4>
+                <p>г. Минск, Тимирязева 67, офис 625</p>
+                <p>Мы ждем вас с 9.00 до 18.00, кроме Вс - Выходной</p>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+              <div class="phone">
+                <h4>Позвоните нам</h4>
+                <p>+375 (29) 777-66-44</p>
+                <p>+375 (33) 888-44-44</p>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+              <h4>Подпишитесь на новости и акции</h4>
+              <div class="form-bottom">
+                <%= simple_form_for [:fe, Subscriber.new], remote: true do |f| %>
+                  <%= f.input :email, label: false, placeholder: "Введите ваш e-mail", input_html: {id: "sub_email", name: "email"}, required: true %>
+                  <div class="footer-subscribe">
+                    <button type="submit" name="subscribe" value="" id="subscribe_btn" >
+                    <i class="glyphicon glyphicon-send"></i>
+                    </button>
+
+
+                <% end %>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-buttom">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+              <p class="text-left"> &#169; ООО «GOPRINT», Минск,
+              <%- if Time.now.year == 2016 %>
+              <%= Time.now.year %>
+              <%- else %>
+
+              <%= "2016 - #{Time.now.year}" %>
+              <% end %>
+              </p>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+              <p class="text-right"><a href="https://www.intellectit.by/" target="_blank">Разработка INTELLECT-IT</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script type="text/javascript">
+
+
+
+    </script>
+</body>
+</html>

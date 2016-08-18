@@ -1,0 +1,9 @@
+p#notice = notice
+
+p
+  strong Order:
+  = @cp_image.order
+
+= link_to 'Edit', edit_cp_image_path(@cp_image)
+'|
+= link_to 'Back', cp_images_path
